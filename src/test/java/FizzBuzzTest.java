@@ -85,7 +85,7 @@ public class FizzBuzzTest {
 
     @Test
 
-    public void testStartGreaterThanEnd_Negative() {
+public void testStartGreaterThanEnd_Negative() {
         //AAA
         //Arrange
         int start = 20;
