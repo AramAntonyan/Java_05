@@ -46,4 +46,46 @@ public class ManipulationsWithArrays {
         }
         return arrayInt;
     }
+
+    //----------------------------------------------------------------------------------------//
+    /*
+    Написать метод toStringArray(), который принимает на вход массив целых чисел,
+    и возвращает массив типа String[] из тех же чисел (желательно не использовать метод .toString(),
+    нужно переводить вручную)
+    Например, toStringArray({1, 2, 3, 4, 5}) -> {“1”, “2”, “3”, “4”, “5”}
+     */
+
+    public String[] toStringArray(int[] array) {
+        String[] arrayString = new String[array.length];
+        if (array.length > 0) {
+            for (int i = 0; i < array.length; i++) {
+                arrayString[i] = "" + array[i];
+            }
+            return arrayString;
+        }
+        return new String[]{};
+    }
+    //----------------------------------------------------------------------------------------//
+    /*
+    HW8 Part 1.1 Arrays #9
+    Перегрузить метод toStringArray() параметром double[].
+    Этот метод должен возвращать массив типа String[] (желательно не использовать метод .toString(),
+    нужно переводить вручную)
+    Например, toStringArray({1.1, 2.5, 3.7, 4.0, 5.5}) -> {“1.1”, “2.5”, “3.7”, “4.0”, “5.5”}
+     */
+
+    public String[] fromDoubleToStringArray(double[] array) {
+        String[] arrayString = new String[array.length];
+        if (array.length > 0) {
+            for (int i = 0; i < array.length; i++) {
+                arrayString[i] = "" + array[i];
+            }
+            return arrayString;
+        }
+        return new String[]{};
+    }
+
+
+
+
 }
