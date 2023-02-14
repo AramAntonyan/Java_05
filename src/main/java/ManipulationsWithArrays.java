@@ -35,4 +35,15 @@ public class ManipulationsWithArrays {
     Например, toIntArray({1.1, 2.5, 3.7, 4.0, 5.5}) -> {1, 2, 3, 4, 5}
      */
 
+    public int[] toIntArray(double[] array) {
+        int[] arrayInt = new int[array.length];
+        if (array.length > 0) {
+            for (int i = 0; i < array.length; i++) {
+                arrayInt[i] = (int) array[i];
+            }
+        } else {
+            return new int[]{};
+        }
+        return arrayInt;
+    }
 }

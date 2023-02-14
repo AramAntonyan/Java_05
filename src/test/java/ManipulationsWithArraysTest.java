@@ -69,4 +69,35 @@ public class ManipulationsWithArraysTest {
         Assert.assertEquals(actualResult, expectedResult);
     }
 
+    @Test
+    //Positive
+    //({1.1, 2.5, 3.7, 4.0, 5.5}) -> {1, 2, 3, 4, 5}
+    //Arrange
+    public void testDoubleToIntArray_HappyPath() {
+        double[] doubleArray = new double[]{1.1, 2.5, 3.7, 4.0, 5.5};
+        int[] expectedResult = new int[]{1, 2, 3, 4, 5};
+
+        //Act
+        int[] actualResult = new ManipulationsWithArrays().toIntArray(doubleArray);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    //Negative
+    //(double{}) -> int{}
+    //Arrange
+    public void testDoubleIsEmptyToIntArray() {
+        double[] doubleArray = new double[]{};
+        int[] expectedResult = new int[]{};
+
+        //Act
+        int[] actualResult = new ManipulationsWithArrays().toIntArray(doubleArray);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+
 }
