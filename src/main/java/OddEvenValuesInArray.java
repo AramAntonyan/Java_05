@@ -23,6 +23,24 @@ public class OddEvenValuesInArray {
     }
 
 
+    /*
+        HW8 Part 1.1 Arrays #11
+
+    Написать метод countOddValuesInArray(), который принимает на вход массив целых чисел,
+    и возвращает количество нечетных чисел в этом массиве.
+     */
+
+    public int countOddValuesInArray(int[] array) {
+
+        int count = 0;
+
+        if (array.length == 0) {
+            return -1;
+        }
+        return array.length - countEvenValuesInArray(array);
+
+    }
+
 
 
 

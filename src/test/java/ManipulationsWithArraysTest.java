@@ -137,14 +137,14 @@ public class ManipulationsWithArraysTest {
     // toStringArray({1.1, 2.5, 3.7, 4.0, 5.5}) -> {“1.1”, “2.5”, “3.7”, “4.0”, “5.5”}
     //Arrange
 
-    public void testDoubleValuesArrayToStringValuesArray_HappyPath(){
+    public void testDoubleValuesArrayToStringValuesArray_HappyPath() {
         //Arrange
 
         double[] arrayDouble = new double[]{1.1, 2.5, 3.7, 4.0, 5.5};
         String[] expectedResult = new String[]{"1.1", "2.5", "3.7", "4.0", "5.5"};
 
         //Act
-        String[]actualResult = new ManipulationsWithArrays().fromDoubleToStringArray(arrayDouble);
+        String[] actualResult = new ManipulationsWithArrays().fromDoubleToStringArray(arrayDouble);
 
         //Assert
         Assert.assertEquals(actualResult, expectedResult);
@@ -155,20 +155,109 @@ public class ManipulationsWithArraysTest {
     // toStringArray({}) -> {}
     //Arrange
 
-    public void testDoubleValuesZeroArrayToStringValuesZeroArray_HappyPath(){
+    public void testDoubleValuesZeroArrayToStringValuesZeroArray_HappyPath() {
         //Arrange
 
         double[] arrayDouble = new double[]{};
         String[] expectedResult = new String[]{};
 
         //Act
-        String[]actualResult = new ManipulationsWithArrays().fromDoubleToStringArray(arrayDouble);
+        String[] actualResult = new ManipulationsWithArrays().fromDoubleToStringArray(arrayDouble);
 
         //Assert
         Assert.assertEquals(actualResult, expectedResult);
     }
 
 
+    //HW8 Part 1.1 Arrays #12
+    /*
+    В классе ManipulationsWithArrays написать метод areValuesGreaterThanNumber(),
+    который принимает на вход массив целых чисел и число number.
+    Метод возвращает значение true, если все элементы массива больше number,
+    иначе возвращает false.
+     */
+
+    @Test
+    //Positive test Happy Path
+    //return true
+    public void testEveryElementInArrayIsBiggerThanNumber_HappyPath() {
+
+        //Arrange
+        int[] array = new int[]{6, 7, 8, 9, 10};
+        int number = 5;
+        boolean expectedResult = true;
+
+        //Act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+
+
+    }
+
+    @Test
+    //At least one element in array is smaller than number
+    //return false
+
+    public void testSomeElementInArrayIsSmallerThanNumber() {
+
+        //Arrange
+        int[] array = new int[]{4, 7, 8, 9, 10};
+        int number = 5;
+        boolean expectedResult = false;
+
+        //Act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+
+
+    }
+
+
+    @Test
+    //One element in array is equals to number
+    //return false
+
+    public void testOneElementInArrayIsSEqualsToNumber() {
+
+        //Arrange
+        int[] array = new int[]{5, 7, 8, 9, 10};
+        int number = 5;
+        boolean expectedResult = false;
+
+        //Act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+
+
+    }
+
+
+    @Test
+    //Negative test
+    //Empty array
+    //return false
+
+    public void testEmptyArray_NegativeTest() {
+
+        //Arrange
+        int[] array = new int[]{};
+        int number = 5;
+        boolean expectedResult = false;
+
+        //Act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+
+
+    }
 
 
 
